@@ -199,7 +199,35 @@ const GUIComponent = props => {
                         onRequestClose={onRequestCloseBackdropLibrary}
                     />
                 ) : null}
-                
+                <MenuBar
+                    accountNavOpen={accountNavOpen}
+                    authorId={authorId}
+                    authorThumbnailUrl={authorThumbnailUrl}
+                    authorUsername={authorUsername}
+                    canChangeLanguage={canChangeLanguage}
+                    canCreateCopy={canCreateCopy}
+                    canCreateNew={canCreateNew}
+                    canEditTitle={canEditTitle}
+                    canManageFiles={canManageFiles}
+                    canRemix={canRemix}
+                    canSave={canSave}
+                    canShare={canShare}
+                    className={styles.menuBarPosition}
+                    enableCommunity={enableCommunity}
+                    isShared={isShared}
+                    logo={logo}
+                    renderLogin={renderLogin}
+                    showComingSoon={showComingSoon}
+                    onClickAccountNav={onClickAccountNav}
+                    onClickLogo={onClickLogo}
+                    onCloseAccountNav={onCloseAccountNav}
+                    onLogOut={onLogOut}
+                    onOpenRegistration={onOpenRegistration}
+                    onProjectTelemetryEvent={onProjectTelemetryEvent}
+                    onSeeCommunity={onSeeCommunity}
+                    onShare={onShare}
+                    onToggleLoginOpen={onToggleLoginOpen}
+                />
                 <Box className={styles.bodyWrapper}>
                     <Box className={styles.flexWrapper}>
                         <Box className={styles.editorWrapper}>
@@ -301,6 +329,7 @@ const GUIComponent = props => {
                                 <Backpack host={backpackHost} />
                             ) : null}
                         </Box>
+
                         <Box className={classNames(styles.stageAndTargetWrapper, styles[stageSize])}>
                             <StageWrapper
                                 isRendererSupported={isRendererSupported}
