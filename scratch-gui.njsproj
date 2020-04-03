@@ -4,7 +4,8 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{960ba5b0-d90e-4cd5-8521-c5df5d837e10}</ProjectGuid>
-    <ProjectHome>.</ProjectHome>
+    <ProjectHome>
+    </ProjectHome>
     <ProjectView>ProjectFiles</ProjectView>
     <StartupFile>webpack.config.js</StartupFile>
     <WorkingDirectory>.</WorkingDirectory>
@@ -15,6 +16,7 @@
     <StartWebBrowser>True</StartWebBrowser>
     <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
     <LaunchUrl>http://localhost:8601/</LaunchUrl>
+    <Name>scratch-gui</Name>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
