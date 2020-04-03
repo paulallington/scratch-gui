@@ -3,7 +3,8 @@
 @import "../../css/z-index.css";
 
 .menu-bar {
-    display: flex;
+    /*display: flex;*/
+    display: none;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: nowrap;
