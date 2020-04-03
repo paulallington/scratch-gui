@@ -42,6 +42,11 @@ export default appTarget => {
     // TODO a hack for testing the backpack, allow backpack host to be set by url param
     const backpackHostMatches = window.location.href.match(/[?&]backpack_host=([^&]*)&?/);
     const backpackHost = backpackHostMatches ? backpackHostMatches[1] : null;
+    // const projectHost = 'https://thecodezone-online.azurewebsites.net/api/Project';
+    // const assetHost = 'https://thecodezone-online.azurewebsites.net/api/ProjectAsset';
+    const projectHost = 'https://localhost:44388//api/Project';
+    const assetHost = 'https://localhost:44388//api/ProjectAsset';
+    const canSave = true;
 
     const scratchDesktopMatches = window.location.href.match(/[?&]isScratchDesktop=([^&]+)/);
     let simulateScratchDesktop;
@@ -78,8 +83,10 @@ export default appTarget => {
                 backpackVisible={false}
                 showComingSoon
                 backpackHost={backpackHost}
-                canSave={false}
+                canSave={canSave}
                 onClickLogo={onClickLogo}
+                projectHost={projectHost}
+                assetHost={assetHost}
             />,
         appTarget);
 };
