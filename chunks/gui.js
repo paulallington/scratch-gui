@@ -178,7 +178,9 @@ var handleTelemetryModalOptOut = function handleTelemetryModalOptOut() {
   var backpackHostMatches = window.location.href.match(/[?&]backpack_host=([^&]*)&?/);
   var backpackHost = backpackHostMatches ? backpackHostMatches[1] : null;
   var projectHost = 'https://thecodezone-online.azurewebsites.net/api/Project';
-  var assetHost = 'https://thecodezone-online.azurewebsites.net/api/ProjectAsset';
+  var assetHost = 'https://thecodezone-online.azurewebsites.net/api/ProjectAsset'; //const projectHost = 'https://localhost:44388/api/Project';
+  //const assetHost = 'https://localhost:44388/api/ProjectAsset';
+
   var canSave = true;
   var scratchDesktopMatches = window.location.href.match(/[?&]isScratchDesktop=([^&]+)/);
   var simulateScratchDesktop;
