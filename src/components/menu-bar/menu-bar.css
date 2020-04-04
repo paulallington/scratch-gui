@@ -2,12 +2,13 @@
 @import "../../css/units.css";
 @import "../../css/z-index.css";
 
+
 .menu-bar {
-    /*display: flex;*/
-    display: none;
+    display: flex;
+    /*display: none;*/
     flex-direction: row;
     justify-content: space-between;
-    flex-wrap: nowrap;
+    flex-wrap: nowrap; 
 
     /*
         For most things, we shouldn't explicitly set height, and let the
@@ -98,7 +99,7 @@
 }
 
 .file-group {
-    display: flex;
+    display: none;
     flex-direction: row;
     align-items: center;
 }

@@ -29,6 +29,7 @@ const SaveStatus = ({
         <InlineMessages />
     ) : projectChanged && (
         <div
+            id="saveBtn"
             className={styles.saveNow}
             onClick={onClickSave}
         >
