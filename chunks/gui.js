@@ -13,11 +13,12 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "html,\r\nbody,\r\n.index_app_2mqDO {\r\n    /* probably unecessary, transitional until layout is refactored */\r\n    width: 100%; \r\n    height: 100%;\r\n    margin: 0;\r\n\r\n    /* Setting min height/width makes the UI scroll below those sizes */\r\n    min-width: 1024px;\r\n    min-height: 640px; /* Min height to fit sprite/backdrop button */\r\n}\r\n\r\n/* @todo: move globally? Safe / side FX, for blocks particularly? */\r\n\r\n* { -webkit-box-sizing: border-box; box-sizing: border-box; }\r\n", ""]);
+exports.push([module.i, "html,\r\nbody,\r\n.index_app_2mqDO {\r\n    /* probably unecessary, transitional until layout is refactored */\r\n    width: 100%; \r\n    height: 100%;\r\n    margin: 0;\r\n\r\n    /* Setting min height/width makes the UI scroll below those sizes */\r\n    min-width: 1024px;\r\n    min-height: 640px; /* Min height to fit sprite/backdrop button */\r\n}\r\n\r\n/* @todo: move globally? Safe / side FX, for blocks particularly? */\r\n\r\n* { -webkit-box-sizing: border-box; box-sizing: border-box; }\r\n\r\n#index_fileMenu_2vt2L {\r\n    display: none !important;\r\n}\n", ""]);
 
 // exports
 exports.locals = {
-	"app": "index_app_2mqDO"
+	"app": "index_app_2mqDO",
+	"fileMenu": "index_fileMenu_2vt2L"
 };
 
 /***/ }),
@@ -176,11 +177,11 @@ var handleTelemetryModalOptOut = function handleTelemetryModalOptOut() {
   var WrappedGui = Object(redux__WEBPACK_IMPORTED_MODULE_2__["compose"])(_lib_app_state_hoc_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], _lib_hash_parser_hoc_jsx__WEBPACK_IMPORTED_MODULE_5__["default"])(_containers_gui_jsx__WEBPACK_IMPORTED_MODULE_4__["default"]); // TODO a hack for testing the backpack, allow backpack host to be set by url param
 
   var backpackHostMatches = window.location.href.match(/[?&]backpack_host=([^&]*)&?/);
-  var backpackHost = backpackHostMatches ? backpackHostMatches[1] : null;
-  var projectHost = 'https://api.thecodezone.co.uk/api/Project';
-  var assetHost = 'https://api.thecodezone.co.uk/api/ProjectAsset'; //const projectHost = 'https://localhost:44388/api/Project';
-  //const assetHost = 'https://localhost:44388/api/ProjectAsset';
+  var backpackHost = backpackHostMatches ? backpackHostMatches[1] : null; //const projectHost = 'https://api.thecodezone.co.uk/api/Project';
+  //const assetHost = 'https://api.thecodezone.co.uk/api/ProjectAsset';
 
+  var projectHost = 'https://localhost:44388/api/Project';
+  var assetHost = 'https://localhost:44388/api/ProjectAsset';
   var canSave = true;
   var scratchDesktopMatches = window.location.href.match(/[?&]isScratchDesktop=([^&]+)/);
   var simulateScratchDesktop;
