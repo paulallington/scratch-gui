@@ -75,7 +75,7 @@ const ProjectSaverHOC = function (WrappedComponent) {
             }
 
             if (this.props.projectChanged && !prevProps.projectChanged) {
-                this.scheduleAutoSave();
+                this.autoSaveOnInteraction();
             }
             if (this.props.isUpdating && !prevProps.isUpdating) {
                 this.updateProjectToStorage();
@@ -151,6 +151,16 @@ const ProjectSaverHOC = function (WrappedComponent) {
         }
         isShowingCreatable (props) {
             return props.canCreateNew && props.isShowingWithoutId;
+        }
+        autoSaveOnInteraction () {
+            return this.storeProject(this.props.reduxProjectId)
+                .then(() => {
+                    this.props.onShowSaveSuccessAlert();
+                })
+                .catch(err => {
+                    this.props.onShowAlert('savingError');
+                    this.props.onProjectError(err);
+                });
         }
         updateProjectToStorage () {
             this.props.onShowSavingAlert();
