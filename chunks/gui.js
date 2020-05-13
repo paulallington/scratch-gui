@@ -179,10 +179,10 @@ var handleTelemetryModalOptOut = function handleTelemetryModalOptOut() {
   var backpackHostMatches = window.location.href.match(/[?&]backpack_host=([^&]*)&?/);
   var backpackHost = backpackHostMatches ? backpackHostMatches[1] : null;
   var projectHost = 'https://api.thecodezone.co.uk/api/Project';
-  var assetHost = 'https://api.thecodezone.co.uk/api/ProjectAsset'; //const projectHost = 'https://localhost:44388/api/Project';
-  //const assetHost = 'https://localhost:44388/api/ProjectAsset';
+  var assetHost = 'https://api.thecodezone.co.uk/api/ProjectAsset'; //const projectHost = 'http://localhost:53416/api/Project';
+  //const assetHost = 'http://localhost:53416/api/ProjectAsset';
 
-  var canSave = true;
+  var canSave = false;
   var scratchDesktopMatches = window.location.href.match(/[?&]isScratchDesktop=([^&]+)/);
   var simulateScratchDesktop;
 
