@@ -177,11 +177,11 @@ var handleTelemetryModalOptOut = function handleTelemetryModalOptOut() {
   var WrappedGui = Object(redux__WEBPACK_IMPORTED_MODULE_2__["compose"])(_lib_app_state_hoc_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], _lib_hash_parser_hoc_jsx__WEBPACK_IMPORTED_MODULE_5__["default"])(_containers_gui_jsx__WEBPACK_IMPORTED_MODULE_4__["default"]); // TODO a hack for testing the backpack, allow backpack host to be set by url param
 
   var backpackHostMatches = window.location.href.match(/[?&]backpack_host=([^&]*)&?/);
-  var backpackHost = backpackHostMatches ? backpackHostMatches[1] : null; //const projectHost = 'https://api.thecodezone.co.uk/api/Project';
-  //const assetHost = 'https://api.thecodezone.co.uk/api/ProjectAsset';
+  var backpackHost = backpackHostMatches ? backpackHostMatches[1] : null;
+  var projectHost = 'https://api.thecodezone.co.uk/api/Project';
+  var assetHost = 'https://api.thecodezone.co.uk/api/ProjectAsset'; //const projectHost = 'http://localhost:53416/api/Project';
+  //const assetHost = 'http://localhost:53416/api/ProjectAsset';
 
-  var projectHost = 'http://localhost:53416/api/Project';
-  var assetHost = 'http://localhost:53416/api/ProjectAsset';
   var canSave = false;
   var scratchDesktopMatches = window.location.href.match(/[?&]isScratchDesktop=([^&]+)/);
   var simulateScratchDesktop;
