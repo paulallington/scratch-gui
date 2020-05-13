@@ -42,10 +42,10 @@ export default appTarget => {
     // TODO a hack for testing the backpack, allow backpack host to be set by url param
     const backpackHostMatches = window.location.href.match(/[?&]backpack_host=([^&]*)&?/);
     const backpackHost = backpackHostMatches ? backpackHostMatches[1] : null;
-    //const projectHost = 'https://api.thecodezone.co.uk/api/Project';
-    //const assetHost = 'https://api.thecodezone.co.uk/api/ProjectAsset';
-    const projectHost = 'http://localhost:53416/api/Project';
-    const assetHost = 'http://localhost:53416/api/ProjectAsset';
+    const projectHost = 'https://api.thecodezone.co.uk/api/Project';
+    const assetHost = 'https://api.thecodezone.co.uk/api/ProjectAsset';
+    //const projectHost = 'http://localhost:53416/api/Project';
+    //const assetHost = 'http://localhost:53416/api/ProjectAsset';
     const canSave = false;
 
     const scratchDesktopMatches = window.location.href.match(/[?&]isScratchDesktop=([^&]+)/);
