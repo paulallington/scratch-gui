@@ -46,7 +46,7 @@ export default appTarget => {
     //const assetHost = 'https://api.thecodezone.co.uk/api/ProjectAsset';
     const projectHost = 'http://localhost:53416/api/Project';
     const assetHost = 'http://localhost:53416/api/ProjectAsset';
-    const canSave = true;
+    const canSave = false;
 
     const scratchDesktopMatches = window.location.href.match(/[?&]isScratchDesktop=([^&]+)/);
     let simulateScratchDesktop;
