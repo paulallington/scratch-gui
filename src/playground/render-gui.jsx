@@ -44,8 +44,8 @@ export default appTarget => {
     const backpackHost = backpackHostMatches ? backpackHostMatches[1] : null;
     //const projectHost = 'https://api.thecodezone.co.uk/api/Project';
     //const assetHost = 'https://api.thecodezone.co.uk/api/ProjectAsset';
-    const projectHost = 'https://localhost:44388/api/Project';
-    const assetHost = 'https://localhost:44388/api/ProjectAsset';
+    const projectHost = 'http://localhost:53416/api/Project';
+    const assetHost = 'http://localhost:53416/api/ProjectAsset';
     const canSave = true;
 
     const scratchDesktopMatches = window.location.href.match(/[?&]isScratchDesktop=([^&]+)/);
