@@ -180,9 +180,9 @@ var handleTelemetryModalOptOut = function handleTelemetryModalOptOut() {
   var backpackHost = backpackHostMatches ? backpackHostMatches[1] : null; //const projectHost = 'https://api.thecodezone.co.uk/api/Project';
   //const assetHost = 'https://api.thecodezone.co.uk/api/ProjectAsset';
 
-  var projectHost = 'https://localhost:44388/api/Project';
-  var assetHost = 'https://localhost:44388/api/ProjectAsset';
-  var canSave = true;
+  var projectHost = 'http://localhost:53416/api/Project';
+  var assetHost = 'http://localhost:53416/api/ProjectAsset';
+  var canSave = false;
   var scratchDesktopMatches = window.location.href.match(/[?&]isScratchDesktop=([^&]+)/);
   var simulateScratchDesktop;
 
