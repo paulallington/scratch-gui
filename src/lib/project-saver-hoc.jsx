@@ -75,7 +75,7 @@ const ProjectSaverHOC = function (WrappedComponent) {
             }
 
             if (this.props.projectChanged && !prevProps.projectChanged) {
-                this.autoSaveOnInteraction();
+                this.scheduleAutoSave();
             }
             if (this.props.isUpdating && !prevProps.isUpdating) {
                 this.updateProjectToStorage();
@@ -408,7 +408,7 @@ const ProjectSaverHOC = function (WrappedComponent) {
         vm: PropTypes.instanceOf(VM).isRequired
     };
     ProjectSaverComponent.defaultProps = {
-        autoSaveIntervalSecs: 120,
+        autoSaveIntervalSecs: 10,
         onRemixing: () => {},
         onSetProjectThumbnailer: () => {},
         onSetProjectSaver: () => {},
