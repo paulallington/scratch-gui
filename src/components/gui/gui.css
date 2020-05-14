@@ -311,6 +311,10 @@ $fade-out-distance: 15px;
     margin-top: 53px;
 }
 
+.save-container {
+    margin: 3px 25px 7px 10px;
+}
+
 /*
     Make the (background) page not scrollable when modals are open
     This CSS class is automatically added to the body when react-modal is open

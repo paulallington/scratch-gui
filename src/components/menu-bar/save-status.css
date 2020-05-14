@@ -1,4 +1,14 @@
 .save-now {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     cursor: pointer;
+    margin-right: 45px;
+    font-size: large;
+    font-weight: bolder;
+    background: white;
+    border-radius: 12px;
+    padding: 5px;
+    padding-bottom: 24px;
+    width: 100%;
+    color: #f48a1f;
+    height: 25px;
 }

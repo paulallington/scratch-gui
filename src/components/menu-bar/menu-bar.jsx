@@ -432,13 +432,13 @@ class MenuBar extends React.Component {
                     </div>
                 </div>
 
-                <div className={styles.accountInfoGroup}>
+                {/* <div className={styles.accountInfoGroup}>
                     <div className={styles.menuBarItem} onClick={this.handleClickSave}>
                         {this.props.canSave && (
                                 <SaveStatus />
                         )}
                     </div>
-                </div>
+                </div> */}
             </Box>
         );
     }

@@ -2,7 +2,7 @@
 @import "../../css/units.css";
 
 .inline-message {
-    color: $ui-white;
+    color: black;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     display: flex;
     justify-content: flex-end;
@@ -11,17 +11,18 @@
 }
 
 .success {
-    color: $ui-white-dim;
+    color: black;
 }
 
 .info {
-    color: $ui-white;
+    color: black;
 }
 
 .warn {
-    color: $error-light;
+    color: black;
 }
 
 .spinner {
+    display: none;
     margin-right: $space;
 }
