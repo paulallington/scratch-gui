@@ -4,22 +4,28 @@
 .inline-message {
     color: black;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    font-size: .8125rem;
+    font-size: large;
+    font-weight: bolder;
+    background: white;
+    border-radius: 12px;
+    padding: 5px;
+    padding-bottom: 24px;
+    width: 100%;
+    color: #f48a1f;
+    height: 25px;
+
 }
 
 .success {
-    color: black;
+    margin-right: 63px;
 }
 
 .info {
-    color: black;
+    margin-right: 70px;
 }
 
 .warn {
-    color: black;
+    margin-right: 45px;
 }
 
 .spinner {
