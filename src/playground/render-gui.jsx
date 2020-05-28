@@ -46,6 +46,8 @@ export default appTarget => {
     const assetHost = 'https://api.thecodezone.co.uk/api/ProjectAsset';
     // const projectHost = 'https://localhost:44388/api/Project';
     // const assetHost = 'https://localhost:44388/api/ProjectAsset';
+    const preventAutoSaveMatches = window.location.href.match(/[?&]noAutoSave=([^&\\/]*)&?/);
+    const preventAutoSave = !!preventAutoSaveMatches;
     const canSave = true;
 
     const scratchDesktopMatches = window.location.href.match(/[?&]isScratchDesktop=([^&]+)/);
@@ -73,7 +75,8 @@ export default appTarget => {
                 canEditTitle
                 isScratchDesktop
                 showTelemetryModal
-                canSave={false}
+                canSave={canSave}
+                preventAutoSave={preventAutoSave}
                 onTelemetryModalCancel={handleTelemetryModalCancel}
                 onTelemetryModalOptIn={handleTelemetryModalOptIn}
                 onTelemetryModalOptOut={handleTelemetryModalOptOut}
@@ -84,6 +87,7 @@ export default appTarget => {
                 showComingSoon
                 backpackHost={backpackHost}
                 canSave={canSave}
+                preventAutoSave={preventAutoSave}
                 onClickLogo={onClickLogo}
                 projectHost={projectHost}
                 assetHost={assetHost}

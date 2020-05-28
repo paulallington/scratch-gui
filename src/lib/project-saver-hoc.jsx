@@ -74,7 +74,7 @@ const ProjectSaverHOC = function (WrappedComponent) {
                 this.reportTelemetryEvent('projectDidLoad');
             }
 
-            if (this.props.projectChanged && !prevProps.projectChanged) {
+            if (!this.props.preventAutoSave && (this.props.projectChanged && !prevProps.projectChanged)) {
                 this.scheduleAutoSave();
             }
             if (this.props.isUpdating && !prevProps.isUpdating) {
@@ -369,6 +369,7 @@ const ProjectSaverHOC = function (WrappedComponent) {
         autoSaveTimeoutId: PropTypes.number,
         canCreateNew: PropTypes.bool,
         canSave: PropTypes.bool,
+        preventAutoSave: PropTypes.bool,
         isAnyCreatingNewState: PropTypes.bool,
         isCreatingCopy: PropTypes.bool,
         isCreatingNew: PropTypes.bool,
