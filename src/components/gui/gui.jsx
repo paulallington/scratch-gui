@@ -74,7 +74,6 @@ const GUIComponent = props => {
         canManageFiles,
         canRemix,
         canSave,
-        preventAutoSave,
         canCreateCopy,
         canShare,
         canUseCloud,
@@ -202,35 +201,6 @@ const GUIComponent = props => {
                         onRequestClose={onRequestCloseBackdropLibrary}
                     />
                 ) : null}
-                {/* <MenuBar
-                    accountNavOpen={accountNavOpen}
-                    authorId={authorId}
-                    authorThumbnailUrl={authorThumbnailUrl}
-                    authorUsername={authorUsername}
-                    canChangeLanguage={canChangeLanguage}
-                    canCreateCopy={canCreateCopy}
-                    canCreateNew={canCreateNew}
-                    canEditTitle={canEditTitle}
-                    canManageFiles={canManageFiles}
-                    canRemix={canRemix}
-                    canSave={canSave}
-                    canShare={canShare}
-                    className={styles.menuBarPosition}
-                    enableCommunity={enableCommunity}
-                    isShared={isShared}
-                    logo={logo}
-                    renderLogin={renderLogin}
-                    showComingSoon={showComingSoon}
-                    onClickAccountNav={onClickAccountNav}
-                    onClickLogo={onClickLogo}
-                    onCloseAccountNav={onCloseAccountNav}
-                    onLogOut={onLogOut}
-                    onOpenRegistration={onOpenRegistration}
-                    onProjectTelemetryEvent={onProjectTelemetryEvent}
-                    onSeeCommunity={onSeeCommunity}
-                    onShare={onShare}
-                    onToggleLoginOpen={onToggleLoginOpen}
-                /> */}
                 <Box className={styles.bodyWrapper}>
                     <Box className={styles.flexWrapper}>
                         <Box className={styles.editorWrapper}>
@@ -293,6 +263,35 @@ const GUIComponent = props => {
                                     <div className={styles.saveContainer}>
                                         <SaveStatus />
                                     </div>
+                                    <MenuBar
+                                        accountNavOpen={accountNavOpen}
+                                        authorId={authorId}
+                                        authorThumbnailUrl={authorThumbnailUrl}
+                                        authorUsername={authorUsername}
+                                        canChangeLanguage={canChangeLanguage}
+                                        canCreateCopy={canCreateCopy}
+                                        canCreateNew={canCreateNew}
+                                        canEditTitle={canEditTitle}
+                                        canManageFiles={canManageFiles}
+                                        canRemix={canRemix}
+                                        canSave={canSave}
+                                        canShare={canShare}
+                                        className={styles.menuBarPosition}
+                                        enableCommunity={enableCommunity}
+                                        isShared={isShared}
+                                        logo={logo}
+                                        renderLogin={renderLogin}
+                                        showComingSoon={showComingSoon}
+                                        onClickAccountNav={onClickAccountNav}
+                                        onClickLogo={onClickLogo}
+                                        onCloseAccountNav={onCloseAccountNav}
+                                        onLogOut={onLogOut}
+                                        onOpenRegistration={onOpenRegistration}
+                                        onProjectTelemetryEvent={onProjectTelemetryEvent}
+                                        onSeeCommunity={onSeeCommunity}
+                                        onShare={onShare}
+                                        onToggleLoginOpen={onToggleLoginOpen}
+                                    />
                                 </TabList>
                                 <TabPanel className={tabClassNames.tabPanel}>
                                     <Box className={styles.blocksWrapper}>
@@ -376,7 +375,6 @@ GUIComponent.propTypes = {
     canManageFiles: PropTypes.bool,
     canRemix: PropTypes.bool,
     canSave: PropTypes.bool,
-    preventAutoSave: PropTypes.bool,
     canShare: PropTypes.bool,
     canUseCloud: PropTypes.bool,
     cardsVisible: PropTypes.bool,
@@ -430,7 +428,6 @@ GUIComponent.defaultProps = {
     canManageFiles: true,
     canRemix: false,
     canSave: false,
-    preventAutoSave: true,
     canCreateCopy: false,
     canShare: false,
     canUseCloud: false,

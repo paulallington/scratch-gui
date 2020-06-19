@@ -311,6 +311,15 @@ class MenuBar extends React.Component {
                 {remixMessage}
             </Button>
         );
+
+        const allowDownloadMatches = window.location.href.match(/[?&]allowDownload=([^&\\/]*)&?/);
+        const allowDownload = !!allowDownloadMatches;
+
+        if (!allowDownload) {
+            return (
+                <p />
+            );
+        }
         return (
             <Box
                 className={classNames(
@@ -341,14 +350,14 @@ class MenuBar extends React.Component {
                                         place={this.props.isRtl ? 'left' : 'right'}
                                         onRequestClose={this.props.onRequestCloseFile}
                                     >
-                                        <MenuSection>
+                                        {/* <MenuSection>
                                             <MenuItem
                                                 isRtl={this.props.isRtl}
                                                 onClick={this.handleClickNew}
                                             >
                                                 {newProjectMessage}
                                             </MenuItem>
-                                        </MenuSection>
+                                        </MenuSection> */}
                                         {(false && (this.props.canSave || this.props.canCreateCopy || this.props.canRemix)) && (
                                             <MenuSection>
                                                 {this.props.canSave && (
@@ -369,7 +378,7 @@ class MenuBar extends React.Component {
                                             </MenuSection>
                                         )}
                                         <MenuSection>
-                                            <SBFileUploader
+                                            {/* <SBFileUploader
                                                 canSave={this.props.canSave}
                                                 userOwnsProject={this.props.userOwnsProject}
                                             >
@@ -378,13 +387,11 @@ class MenuBar extends React.Component {
                                                         className={className}
                                                         onClick={handleLoadProject}
                                                     >
-                                                        {/* eslint-disable max-len */}
                                                         {this.props.intl.formatMessage(sharedMessages.loadFromComputerTitle)}
-                                                        {/* eslint-enable max-len */}
                                                         {renderFileInput()}
                                                     </MenuItem>
                                                 )}
-                                            </SBFileUploader>
+                                            </SBFileUploader> */}
                                             <SB3Downloader>{(className, downloadProjectCallback) => (
                                                 <MenuItem
                                                     className={className}

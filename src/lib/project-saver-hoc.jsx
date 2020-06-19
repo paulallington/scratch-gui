@@ -67,6 +67,9 @@ const ProjectSaverHOC = function (WrappedComponent) {
             this.props.onSetProjectSaver(this.tryToAutoSave);
         }
         componentDidUpdate (prevProps) {
+            const preventAutoSaveMatches = window.location.href.match(/[?&]noAutoSave=([^&\\/]*)&?/);
+            const preventAutoSave = !!preventAutoSaveMatches;
+
             if (!this.props.isAnyCreatingNewState && prevProps.isAnyCreatingNewState) {
                 this.reportTelemetryEvent('projectWasCreated');
             }
@@ -74,7 +77,7 @@ const ProjectSaverHOC = function (WrappedComponent) {
                 this.reportTelemetryEvent('projectDidLoad');
             }
 
-            if (!this.props.preventAutoSave && (this.props.projectChanged && !prevProps.projectChanged)) {
+            if (!preventAutoSave && (this.props.projectChanged && !prevProps.projectChanged)) {
                 this.scheduleAutoSave();
             }
             if (this.props.isUpdating && !prevProps.isUpdating) {
