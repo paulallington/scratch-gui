@@ -182,7 +182,9 @@ var handleTelemetryModalOptOut = function handleTelemetryModalOptOut() {
   var assetHost = 'https://api.thecodezone.co.uk/api/ProjectAsset'; // const projectHost = 'https://localhost:44388/api/Project';
   // const assetHost = 'https://localhost:44388/api/ProjectAsset';
 
-  var canSave = true;
+  var canSave = true; // eslint-disable-next-line no-console
+
+  console.log("Iframe: ".concat(window.location.href));
   var scratchDesktopMatches = window.location.href.match(/[?&]isScratchDesktop=([^&]+)/);
   var simulateScratchDesktop;
 
