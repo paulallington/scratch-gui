@@ -315,6 +315,9 @@ class MenuBar extends React.Component {
         const allowDownloadMatches = window.location.href.match(/[?&]allowDownload=([^&\\/]*)&?/);
         const allowDownload = !!allowDownloadMatches;
 
+        // eslint-disable-next-line no-console
+        console.log(`Allow Download: ${allowDownload}`);
+
         if (!allowDownload) {
             return (
                 <p />

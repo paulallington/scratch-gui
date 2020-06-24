@@ -69,6 +69,9 @@ const ProjectSaverHOC = function (WrappedComponent) {
         componentDidUpdate (prevProps) {
             const preventAutoSaveMatches = window.location.href.match(/[?&]noAutoSave=([^&\\/]*)&?/);
             const preventAutoSave = !!preventAutoSaveMatches;
+            
+            // eslint-disable-next-line no-console
+            console.log(`Prevent Auto Save: ${preventAutoSave}`);
 
             if (!this.props.isAnyCreatingNewState && prevProps.isAnyCreatingNewState) {
                 this.reportTelemetryEvent('projectWasCreated');
@@ -78,6 +81,8 @@ const ProjectSaverHOC = function (WrappedComponent) {
             }
 
             if (!preventAutoSave && (this.props.projectChanged && !prevProps.projectChanged)) {
+                // eslint-disable-next-line no-console
+                console.log('Scheduling Auto Save');
                 this.scheduleAutoSave();
             }
             if (this.props.isUpdating && !prevProps.isUpdating) {

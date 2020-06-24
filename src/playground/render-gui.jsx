@@ -48,6 +48,9 @@ export default appTarget => {
     // const assetHost = 'https://localhost:44388/api/ProjectAsset';
     const canSave = true;
 
+    // eslint-disable-next-line no-console
+    console.log(`Iframe: ${window.location.href}`);
+
     const scratchDesktopMatches = window.location.href.match(/[?&]isScratchDesktop=([^&]+)/);
     let simulateScratchDesktop;
     if (scratchDesktopMatches) {
