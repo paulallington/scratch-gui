@@ -182,8 +182,6 @@ var handleTelemetryModalOptOut = function handleTelemetryModalOptOut() {
   var assetHost = 'https://api.thecodezone.co.uk/api/ProjectAsset'; // const projectHost = 'https://localhost:44388/api/Project';
   // const assetHost = 'https://localhost:44388/api/ProjectAsset';
 
-  var preventAutoSaveMatches = window.location.href.match(/[?&]noAutoSave=([^&\\/]*)&?/);
-  var preventAutoSave = !!preventAutoSaveMatches;
   var canSave = true;
   var scratchDesktopMatches = window.location.href.match(/[?&]isScratchDesktop=([^&]+)/);
   var simulateScratchDesktop;
@@ -207,7 +205,6 @@ var handleTelemetryModalOptOut = function handleTelemetryModalOptOut() {
     isScratchDesktop: true,
     showTelemetryModal: true,
     canSave: canSave,
-    preventAutoSave: preventAutoSave,
     onTelemetryModalCancel: handleTelemetryModalCancel,
     onTelemetryModalOptIn: handleTelemetryModalOptIn,
     onTelemetryModalOptOut: handleTelemetryModalOptOut
@@ -217,7 +214,6 @@ var handleTelemetryModalOptOut = function handleTelemetryModalOptOut() {
     showComingSoon: true,
     backpackHost: backpackHost,
     canSave: canSave,
-    preventAutoSave: preventAutoSave,
     onClickLogo: onClickLogo,
     projectHost: projectHost,
     assetHost: assetHost
