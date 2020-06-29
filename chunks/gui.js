@@ -182,9 +182,16 @@ var handleTelemetryModalOptOut = function handleTelemetryModalOptOut() {
   var assetHost = 'https://api.thecodezone.co.uk/api/ProjectAsset'; // const projectHost = 'https://localhost:44388/api/Project';
   // const assetHost = 'https://localhost:44388/api/ProjectAsset';
 
+  var playerOnlyMatches = window.location.href.match(/[?&]playerOnly=([^&\\/]*)&?/);
+  var isPlayerOnly = !!playerOnlyMatches;
+  var isFullScreen = !!playerOnlyMatches;
   var canSave = true; // eslint-disable-next-line no-console
 
-  console.log("Iframe: ".concat(window.location.href));
+  console.log("Iframe: ".concat(window.location.href)); // eslint-disable-next-line no-console
+
+  console.log("Is Player Only: ".concat(isPlayerOnly)); // eslint-disable-next-line no-console
+
+  console.log("Is Full Screen: ".concat(isFullScreen));
   var scratchDesktopMatches = window.location.href.match(/[?&]isScratchDesktop=([^&]+)/);
   var simulateScratchDesktop;
 
@@ -218,7 +225,9 @@ var handleTelemetryModalOptOut = function handleTelemetryModalOptOut() {
     canSave: canSave,
     onClickLogo: onClickLogo,
     projectHost: projectHost,
-    assetHost: assetHost
+    assetHost: assetHost,
+    isPlayerOnly: isPlayerOnly,
+    isFullScreen: isFullScreen
   }), appTarget);
 });
 
