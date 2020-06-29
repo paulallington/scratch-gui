@@ -63,7 +63,7 @@ const StageHeaderComponent = function (props) {
 
     let header = null;
 
-    if (isFullScreen) {
+    if (isFullScreen & !isPlayerOnly) {
         const stageDimensions = getStageDimensions(null, true);
         const stageButton = showBranding ? (
             <div className={styles.embedScratchLogo}>
@@ -153,18 +153,22 @@ const StageHeaderComponent = function (props) {
                     <div className={styles.stageSizeRow}>
                         {stageControls}
                         <div>
-                            <Button
-                                className={styles.stageButton}
-                                onClick={onSetStageFull}
-                            >
-                                <img
-                                    alt={props.intl.formatMessage(messages.fullStageSizeMessage)}
-                                    className={styles.stageButtonIcon}
-                                    draggable={false}
-                                    src={fullScreenIcon}
-                                    title={props.intl.formatMessage(messages.fullscreenControl)}
-                                />
-                            </Button>
+                            {isPlayerOnly ? (
+                                <Button />
+                            ) : (
+                                <Button
+                                    className={styles.stageButton}
+                                    onClick={onSetStageFull}
+                                >
+                                    <img
+                                        alt={props.intl.formatMessage(messages.fullStageSizeMessage)}
+                                        className={styles.stageButtonIcon}
+                                        draggable={false}
+                                        src={fullScreenIcon}
+                                        title={props.intl.formatMessage(messages.fullscreenControl)}
+                                    />
+                                </Button>
+                            )}
                         </div>
                     </div>
                 </Box>

@@ -46,10 +46,18 @@ export default appTarget => {
     const assetHost = 'https://api.thecodezone.co.uk/api/ProjectAsset';
     // const projectHost = 'https://localhost:44388/api/Project';
     // const assetHost = 'https://localhost:44388/api/ProjectAsset';
+    const playerOnlyMatches = window.location.href.match(/[?&]playerOnly=([^&\\/]*)&?/);
+    const isPlayerOnly = !!playerOnlyMatches;
+    const isFullScreen = !!playerOnlyMatches;
     const canSave = true;
 
     // eslint-disable-next-line no-console
     console.log(`Iframe: ${window.location.href}`);
+
+    // eslint-disable-next-line no-console
+    console.log(`Is Player Only: ${isPlayerOnly}`);
+    // eslint-disable-next-line no-console
+    console.log(`Is Full Screen: ${isFullScreen}`);
 
     const scratchDesktopMatches = window.location.href.match(/[?&]isScratchDesktop=([^&]+)/);
     let simulateScratchDesktop;
@@ -90,6 +98,8 @@ export default appTarget => {
                 onClickLogo={onClickLogo}
                 projectHost={projectHost}
                 assetHost={assetHost}
+                isPlayerOnly={isPlayerOnly}
+                isFullScreen={isFullScreen}
             />,
         appTarget);
 };
