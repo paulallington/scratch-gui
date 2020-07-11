@@ -4,7 +4,7 @@
   "description": "GraphicaL User Interface for creating and running Scratch 3.0 projects",
   "main": "./dist/scratch-gui.js",
   "scripts": {
-    "build": "npm run clean && webpack --progress --colors --bail",
+    "build": "npm run clean && webpack --colors --bail",
     "clean": "rimraf ./build && mkdirp build && rimraf ./dist && mkdirp dist",
     "predeploy": "cp CNAME ./build",
     "deploy": "touch build/.nojekyll && gh-pages -t -d build -m \"Build for $(git log --pretty=format:%H -n1) [skip ci]\"",
@@ -17,7 +17,7 @@
     "test:lint": "eslint . --ext .js,.jsx",
     "test:unit": "jest test[\\\\/]unit",
     "test:smoke": "jest --runInBand test[\\\\/]smoke",
-    "watch": "webpack --progress --colors --watch"
+    "watch": "webpack --colors --watch"
   },
   "author": "Massachusetts Institute of Technology",
   "license": "BSD-3-Clause",
@@ -45,7 +45,7 @@
     "babel-loader": "^8.0.4",
     "base64-loader": "1.0.0",
     "bowser": "1.9.4",
-    "chromedriver": "80.0.0",
+    "chromedriver": "83.0.0",
     "classnames": "2.2.6",
     "computed-style-to-inline-style": "3.0.0",
     "copy-webpack-plugin": "^4.5.1",
@@ -108,14 +108,14 @@
     "redux-mock-store": "^1.2.3",
     "redux-throttle": "0.1.1",
     "rimraf": "^2.6.1",
-    "scratch-audio": "0.1.0-prerelease.20190925183642",
-    "scratch-blocks": "0.1.0-prerelease.20200512201140",
-    "scratch-l10n": "3.9.20200512220101",
-    "scratch-paint": "0.2.0-prerelease.20200512201624",
-    "scratch-render": "0.1.0-prerelease.20200512203149",
+    "scratch-audio": "0.1.0-prerelease.20200528195344",
+    "scratch-blocks": "0.1.0-prerelease.20200709183415",
+    "scratch-l10n": "3.10.20200708030815",
+    "scratch-paint": "0.2.0-prerelease.20200627020736",
+    "scratch-render": "0.1.0-prerelease.20200622210757",
     "scratch-storage": "file:../scratch-storage",
-    "scratch-svg-renderer": "0.2.0-prerelease.20200507183648",
-    "scratch-vm": "0.2.0-prerelease.20200512204241",
+    "scratch-svg-renderer": "0.2.0-prerelease.20200610220938",
+    "scratch-vm": "0.2.0-prerelease.20200709173451",
     "selenium-webdriver": "3.6.0",
     "startaudiocontext": "1.2.1",
     "style-loader": "^0.23.0",
@@ -140,7 +140,8 @@
     ],
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/__mocks__/fileMock.js",
-      "\\.(css|less)$": "<rootDir>/test/__mocks__/styleMock.js"
+      "\\.(css|less)$": "<rootDir>/test/__mocks__/styleMock.js",
+      "editor-msgs(\\.js)?$": "<rootDir>/test/__mocks__/editor-msgs-mock.js"
     }
   }
 }

@@ -69,6 +69,7 @@ import profileIcon from './icon--profile.png';
 import remixIcon from './icon--remix.svg';
 import dropdownCaret from './dropdown-caret.svg';
 import languageIcon from '../language-selector/language-icon.svg';
+import aboutIcon from './icon--about.svg';
 
 import scratchLogo from './scratch-logo.svg';
 
@@ -139,6 +140,19 @@ MenuItemTooltip.propTypes = {
     className: PropTypes.string,
     id: PropTypes.string,
     isRtl: PropTypes.bool
+};
+
+const AboutButton = props => (
+    <Button
+        className={classNames(styles.menuBarItem, styles.hoverable)}
+        iconClassName={styles.aboutIcon}
+        iconSrc={aboutIcon}
+        onClick={props.onClick}
+    />
+);
+
+AboutButton.propTypes = {
+    onClick: PropTypes.func.isRequired
 };
 
 class MenuBar extends React.Component {
@@ -323,6 +337,8 @@ class MenuBar extends React.Component {
                 <p />
             );
         }
+        // Show the About button only if we have a handler for it (like in the desktop app)
+        const aboutButton = this.props.onClickAbout ? <AboutButton onClick={this.props.onClickAbout} /> : null;
         return (
             <Box
                 className={classNames(
@@ -449,6 +465,129 @@ class MenuBar extends React.Component {
                         )}
                     </div>
                 </div> */}
+                    {this.props.sessionExists ? (
+                        this.props.username ? (
+                            // ************ user is logged in ************
+                            <React.Fragment>
+                                <a href="/mystuff/">
+                                    <div
+                                        className={classNames(
+                                            styles.menuBarItem,
+                                            styles.hoverable,
+                                            styles.mystuffButton
+                                        )}
+                                    >
+                                        <img
+                                            className={styles.mystuffIcon}
+                                            src={mystuffIcon}
+                                        />
+                                    </div>
+                                </a>
+                                <AccountNav
+                                    className={classNames(
+                                        styles.menuBarItem,
+                                        styles.hoverable,
+                                        {[styles.active]: this.props.accountMenuOpen}
+                                    )}
+                                    isOpen={this.props.accountMenuOpen}
+                                    isRtl={this.props.isRtl}
+                                    menuBarMenuClassName={classNames(styles.menuBarMenu)}
+                                    onClick={this.props.onClickAccount}
+                                    onClose={this.props.onRequestCloseAccount}
+                                    onLogOut={this.props.onLogOut}
+                                />
+                            </React.Fragment>
+                        ) : (
+                            // ********* user not logged in, but a session exists
+                            // ********* so they can choose to log in
+                            <React.Fragment>
+                                <div
+                                    className={classNames(
+                                        styles.menuBarItem,
+                                        styles.hoverable
+                                    )}
+                                    key="join"
+                                    onMouseUp={this.props.onOpenRegistration}
+                                >
+                                    <FormattedMessage
+                                        defaultMessage="Join Scratch"
+                                        description="Link for creating a Scratch account"
+                                        id="gui.menuBar.joinScratch"
+                                    />
+                                </div>
+                                <div
+                                    className={classNames(
+                                        styles.menuBarItem,
+                                        styles.hoverable
+                                    )}
+                                    key="login"
+                                    onMouseUp={this.props.onClickLogin}
+                                >
+                                    <FormattedMessage
+                                        defaultMessage="Sign in"
+                                        description="Link for signing in to your Scratch account"
+                                        id="gui.menuBar.signIn"
+                                    />
+                                    <LoginDropdown
+                                        className={classNames(styles.menuBarMenu)}
+                                        isOpen={this.props.loginMenuOpen}
+                                        isRtl={this.props.isRtl}
+                                        renderLogin={this.props.renderLogin}
+                                        onClose={this.props.onRequestCloseLogin}
+                                    />
+                                </div>
+                            </React.Fragment>
+                        )
+                    ) : (
+                        // ******** no login session is available, so don't show login stuff
+                        <React.Fragment>
+                            {this.props.showComingSoon ? (
+                                <React.Fragment>
+                                    <MenuBarItemTooltip id="mystuff">
+                                        <div
+                                            className={classNames(
+                                                styles.menuBarItem,
+                                                styles.hoverable,
+                                                styles.mystuffButton
+                                            )}
+                                        >
+                                            <img
+                                                className={styles.mystuffIcon}
+                                                src={mystuffIcon}
+                                            />
+                                        </div>
+                                    </MenuBarItemTooltip>
+                                    <MenuBarItemTooltip
+                                        id="account-nav"
+                                        place={this.props.isRtl ? 'right' : 'left'}
+                                    >
+                                        <div
+                                            className={classNames(
+                                                styles.menuBarItem,
+                                                styles.hoverable,
+                                                styles.accountNavMenu
+                                            )}
+                                        >
+                                            <img
+                                                className={styles.profileIcon}
+                                                src={profileIcon}
+                                            />
+                                            <span>
+                                                {'scratch-cat'}
+                                            </span>
+                                            <img
+                                                className={styles.dropdownCaretIcon}
+                                                src={dropdownCaret}
+                                            />
+                                        </div>
+                                    </MenuBarItemTooltip>
+                                </React.Fragment>
+                            ) : []}
+                        </React.Fragment>
+                    )}
+                </div>
+
+                {aboutButton}
             </Box>
         );
     }
@@ -482,6 +621,7 @@ MenuBar.propTypes = {
     locale: PropTypes.string.isRequired,
     loginMenuOpen: PropTypes.bool,
     logo: PropTypes.string,
+    onClickAbout: PropTypes.func,
     onClickAccount: PropTypes.func,
     onClickEdit: PropTypes.func,
     onClickFile: PropTypes.func,
