@@ -42,8 +42,8 @@ export default appTarget => {
     // TODO a hack for testing the backpack, allow backpack host to be set by url param
     const backpackHostMatches = window.location.href.match(/[?&]backpack_host=([^&]*)&?/);
     const backpackHost = backpackHostMatches ? backpackHostMatches[1] : null;
-    const projectHost = 'https://thecodezone-online-stage.azurewebsites.net/api/Project';
-    const assetHost = 'https://thecodezone-online-stage.azurewebsites.net/api/ProjectAsset';
+    const projectHost = 'https://api.thecodezone.co.uk/api/Project';
+    const assetHost = 'https://api.thecodezone.co.uk/api/ProjectAsset';
     // const projectHost = 'https://localhost:44388/api/Project';
     // const assetHost = 'https://localhost:44388/api/ProjectAsset';
     const playerOnlyMatches = window.location.href.match(/[?&]playerOnly=([^&\\/]*)&?/);
