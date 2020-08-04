@@ -112,7 +112,7 @@ if (Object(_lib_supported_browser__WEBPACK_IMPORTED_MODULE_9__["default"])()) {
   var handleBack = function handleBack() {}; // eslint-disable-next-line react/jsx-no-bind
 
 
-  react_dom__WEBPACK_IMPORTED_MODULE_5___default.a.render(react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(WrappedBrowserModalComponent, {
+  react_dom__WEBPACK_IMPORTED_MODULE_5___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(WrappedBrowserModalComponent, {
     onBack: handleBack
   }), appTarget);
 }
@@ -137,7 +137,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _containers_gui_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../containers/gui.jsx */ "./src/containers/gui.jsx");
 /* harmony import */ var _lib_hash_parser_hoc_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../lib/hash-parser-hoc.jsx */ "./src/lib/hash-parser-hoc.jsx");
 /* harmony import */ var _lib_log_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../lib/log.js */ "./src/lib/log.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 
 
@@ -178,8 +178,8 @@ var handleTelemetryModalOptOut = function handleTelemetryModalOptOut() {
 
   var backpackHostMatches = window.location.href.match(/[?&]backpack_host=([^&]*)&?/);
   var backpackHost = backpackHostMatches ? backpackHostMatches[1] : null;
-  var projectHost = 'https://api.thecodezone.co.uk/api/Project';
-  var assetHost = 'https://api.thecodezone.co.uk/api/ProjectAsset'; // const projectHost = 'https://localhost:44388/api/Project';
+  var projectHost = 'https://thecodezone-online-stage.azurewebsites.net/api/Project';
+  var assetHost = 'https://thecodezone-online-stage.azurewebsites.net/api/ProjectAsset'; // const projectHost = 'https://localhost:44388/api/Project';
   // const assetHost = 'https://localhost:44388/api/ProjectAsset';
 
   var playerOnlyMatches = window.location.href.match(/[?&]playerOnly=([^&\\/]*)&?/);
@@ -209,7 +209,7 @@ var handleTelemetryModalOptOut = function handleTelemetryModalOptOut() {
   if (false) {}
 
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( // important: this is checking whether `simulateScratchDesktop` is truthy, not just defined!
-  simulateScratchDesktop ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(WrappedGui, {
+  simulateScratchDesktop ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(WrappedGui, {
     canEditTitle: true,
     isScratchDesktop: true,
     showTelemetryModal: true,
@@ -217,7 +217,7 @@ var handleTelemetryModalOptOut = function handleTelemetryModalOptOut() {
     onTelemetryModalCancel: handleTelemetryModalCancel,
     onTelemetryModalOptIn: handleTelemetryModalOptIn,
     onTelemetryModalOptOut: handleTelemetryModalOptOut
-  }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(WrappedGui, {
+  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(WrappedGui, {
     canEditTitle: true,
     backpackVisible: false,
     showComingSoon: true,
