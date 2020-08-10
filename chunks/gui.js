@@ -178,8 +178,8 @@ var handleTelemetryModalOptOut = function handleTelemetryModalOptOut() {
 
   var backpackHostMatches = window.location.href.match(/[?&]backpack_host=([^&]*)&?/);
   var backpackHost = backpackHostMatches ? backpackHostMatches[1] : null;
-  var projectHost = 'https://thecodezone-online-stage.azurewebsites.net/api/Project';
-  var assetHost = 'https://thecodezone-online-stage.azurewebsites.net/api/ProjectAsset'; // const projectHost = 'https://localhost:44388/api/Project';
+  var projectHost = 'https://api.thecodezone.co.uk/api/Project';
+  var assetHost = 'https://api.thecodezone.co.uk/api/ProjectAsset'; // const projectHost = 'https://localhost:44388/api/Project';
   // const assetHost = 'https://localhost:44388/api/ProjectAsset';
 
   var playerOnlyMatches = window.location.href.match(/[?&]playerOnly=([^&\\/]*)&?/);
